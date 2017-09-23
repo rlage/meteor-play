@@ -18,6 +18,9 @@ class DocumentEditor extends React.Component {
         body: {
           required: true,
         },
+        rating: {
+          required: true,
+        },
       },
       messages: {
         title: {
@@ -25,6 +28,9 @@ class DocumentEditor extends React.Component {
         },
         body: {
           required: 'This thneeds a gif, please.',
+        },
+        rating: {
+          required: 'This needs a rating, please.',
         },
       },
       submitHandler() { component.handleSubmit(); },
@@ -38,6 +44,7 @@ class DocumentEditor extends React.Component {
     const doc = {
       title: this.title.value.trim(),
       body: this.body.value.trim(),
+      rating: this.rating.value.trim(),
     };
 
     if (existingDocument) doc._id = existingDocument;
@@ -79,6 +86,17 @@ class DocumentEditor extends React.Component {
           placeholder="gif URL"
         />
       </FormGroup>
+      <FormGroup>
+        <ControlLabel>Gif Rating</ControlLabel>
+        <input
+          type="text"
+          className="form-control"
+          name="rating"
+          ref={rating => (this.rating = rating)}
+          defaultValue={doc && doc.rating}
+          placeholder="rating from 1-5"
+        />
+      </FormGroup>
       <Button type="submit" bsStyle="success">
         {doc && doc._id ? 'Save Changes' : 'Add Gif'}
       </Button>
@@ -87,7 +105,7 @@ class DocumentEditor extends React.Component {
 }
 
 DocumentEditor.defaultProps = {
-  doc: { title: '', body: '' },
+  doc: { title: '', body: '', rating: '' },
 };
 
 DocumentEditor.propTypes = {

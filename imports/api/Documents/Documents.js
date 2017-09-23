@@ -44,6 +44,10 @@ Documents.schema = new SimpleSchema({
     type: String,
     label: 'The body of the document.',
   },
+  rating: {
+    type: String,
+    label: 'The rating of the gif.',
+  },
 });
 
 Documents.attachSchema(Documents.schema);
