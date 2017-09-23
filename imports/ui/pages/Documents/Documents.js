@@ -8,6 +8,7 @@ import { createContainer } from 'meteor/react-meteor-data';
 import { Bert } from 'meteor/themeteorchef:bert';
 import DocumentsCollection from '../../../api/Documents/Documents';
 import Loading from '../../components/Loading/Loading';
+import Stars from '../../components/Stars/Stars';
 
 import './Documents.scss';
 
@@ -46,7 +47,7 @@ const Documents = ({ loading, documents, match, history }) => (!loading ? (
           <tr key={_id}>
             <td>{title}</td>
             <td><img src={body}/></td>
-            <td>{rating}</td>
+            <td><Stars rating={rating}/></td>
             <td>{timeago(updatedAt)}</td>
             <td>{monthDayYearAtTime(createdAt)}</td>
             <td>
