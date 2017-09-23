@@ -27,7 +27,7 @@ const Documents = ({ loading, documents, match, history }) => (!loading ? (
   <div className="Documents">
     <div className="page-header clearfix">
       <h4 className="pull-left">Gifs</h4>
-      <Link className="btn btn-success pull-right" to={`${match.url}/new`}>Add Document</Link>
+      <Link className="btn btn-success pull-right" to={`${match.url}/new`}>Add Gif</Link>
     </div>
     {documents.length ? <Table responsive>
       <thead>
