@@ -9,6 +9,7 @@ Meteor.methods({
       title: String,
       body: String,
       rating: String,
+      media: String,
     });
 
     try {
@@ -23,6 +24,7 @@ Meteor.methods({
       title: String,
       body: String,
       rating: String,
+      media: String,
     });
 
     try {

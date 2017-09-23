@@ -35,8 +35,9 @@ const renderDocument = (doc, match, history) => (doc ? (
         </ButtonGroup>
       </ButtonToolbar>
     </div>
-    { doc && doc.body ? <img src={doc.body}/> : null}
+    { doc && doc.body ? doc.media === "youtube" ? <iframe width="420" height="345" src={doc.body}/> : <img src={doc.body}/> : null}
     { doc && doc.body ? <Stars rating={doc.rating}/> : null}
+    { doc && doc.media ? doc.media : null}
   </div>
 ) : <NotFound />);
 

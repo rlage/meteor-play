@@ -46,7 +46,11 @@ Documents.schema = new SimpleSchema({
   },
   rating: {
     type: String,
-    label: 'The rating of the gif.',
+    label: 'The rating of the document.',
+  },
+  media: {
+    type: String,
+    label: 'The media type of the document.',
   },
 });
 

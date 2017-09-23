@@ -6,10 +6,10 @@ import Documents from '../../../api/Documents/Documents';
 import DocumentEditor from '../../components/DocumentEditor/DocumentEditor';
 import NotFound from '../NotFound/NotFound';
 
-const EditDocument = ({ doc, history }) => (doc ? (
+const EditDocument = ({ doc, history, media }) => (doc ? (
   <div className="EditDocument">
     <h4 className="page-header">{`Editing "${doc.title}"`}</h4>
-    <DocumentEditor doc={doc} history={history} />
+    <DocumentEditor doc={doc} history={history} media={media}/>
   </div>
 ) : <NotFound />);
 
