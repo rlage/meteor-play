@@ -26,13 +26,14 @@ const handleRemove = (documentId) => {
 const Documents = ({ loading, documents, match, history }) => (!loading ? (
   <div className="Documents">
     <div className="page-header clearfix">
-      <h4 className="pull-left">Documents</h4>
+      <h4 className="pull-left">Gifs</h4>
       <Link className="btn btn-success pull-right" to={`${match.url}/new`}>Add Document</Link>
     </div>
     {documents.length ? <Table responsive>
       <thead>
         <tr>
           <th>Title</th>
+          <th>Body</th>
           <th>Last Updated</th>
           <th>Created</th>
           <th />
@@ -40,9 +41,10 @@ const Documents = ({ loading, documents, match, history }) => (!loading ? (
         </tr>
       </thead>
       <tbody>
-        {documents.map(({ _id, title, createdAt, updatedAt }) => (
+        {documents.map(({ _id, title, body, createdAt, updatedAt }) => (
           <tr key={_id}>
             <td>{title}</td>
+            <td><img src={body}/></td>
             <td>{timeago(updatedAt)}</td>
             <td>{monthDayYearAtTime(createdAt)}</td>
             <td>

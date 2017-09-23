@@ -24,7 +24,7 @@ class DocumentEditor extends React.Component {
           required: 'Need a title in here, Seuss.',
         },
         body: {
-          required: 'This thneeds a body, please.',
+          required: 'This thneeds a gif, please.',
         },
       },
       submitHandler() { component.handleSubmit(); },
@@ -65,21 +65,22 @@ class DocumentEditor extends React.Component {
           name="title"
           ref={title => (this.title = title)}
           defaultValue={doc && doc.title}
-          placeholder="Oh, The Places You'll Go!"
+          placeholder="Gif name!"
         />
       </FormGroup>
       <FormGroup>
-        <ControlLabel>Body</ControlLabel>
-        <textarea
+        <ControlLabel>Gif URL</ControlLabel>
+        <input
+          type="text"
           className="form-control"
           name="body"
           ref={body => (this.body = body)}
           defaultValue={doc && doc.body}
-          placeholder="Congratulations! Today is your day. You're off to Great Places! You're off and away!"
+          placeholder="gif URL"
         />
       </FormGroup>
       <Button type="submit" bsStyle="success">
-        {doc && doc._id ? 'Save Changes' : 'Add Document'}
+        {doc && doc._id ? 'Save Changes' : 'Add Gif'}
       </Button>
     </form>);
   }
